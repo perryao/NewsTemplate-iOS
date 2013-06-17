@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <development version="4600" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1H-1E-ep0">
+                                <color key="backgroundColor" red="0.48059612771739135" green="0.45428932909740827" blue="0.45746268177801069" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <barButtonItem title="Delete All" id="pW1-oY-2mr">
+                                        <connections>
+                                            <action selector="deleteAllIssues" destination="2" id="Wbc-Hl-gs0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="EW3-Vp-050">
+                                        <progressView key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="222" verticalHuggingPriority="222" horizontalCompressionResistancePriority="1000" progressViewStyle="bar" id="DKr-vL-cAu">
+                                            <rect key="frame" x="91" y="17" width="220" height="11"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        </progressView>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fg9-s7-SGk">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="1TH-RZ-JfG"/>
+                                    <constraint firstAttribute="height" constant="36" id="cnB-kx-u2X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xXu-H6-qL2">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RwF-Zz-ApY">
+                                    <size key="itemSize" width="142" height="157"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="jly-vP-fRb">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="rXB-8S-7Bb" customClass="IssueCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="157"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="142" height="157"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqT-Ny-fv2">
+                                                    <gestureRecognizers/>
+                                                </imageView>
+                                                <progressView opaque="NO" tag="1000" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FKc-7H-xNz">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="111" id="N8p-8L-5Yy"/>
+                                                    </constraints>
+                                                </progressView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl1-Ce-eWa">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="aqT-Ny-fv2" firstAttribute="leading" secondItem="rXB-8S-7Bb" secondAttribute="leading" type="default" id="4L5-bi-6hY"/>
+                                            <constraint firstAttribute="bottom" secondItem="FKc-7H-xNz" secondAttribute="bottom" constant="20" type="default" id="8Pj-GU-lfK"/>
+                                            <constraint firstItem="kl1-Ce-eWa" firstAttribute="centerX" secondItem="rXB-8S-7Bb" secondAttribute="centerX" type="default" id="Nsb-aj-iqY"/>
+                                            <constraint firstItem="aqT-Ny-fv2" firstAttribute="bottom" secondItem="rXB-8S-7Bb" secondAttribute="bottom" type="default" id="TLf-jB-ZM9"/>
+                                            <constraint firstItem="kl1-Ce-eWa" firstAttribute="centerX" secondItem="FKc-7H-xNz" secondAttribute="centerX" type="default" id="j5Y-Yw-8dq"/>
+                                            <constraint firstItem="aqT-Ny-fv2" firstAttribute="top" secondItem="rXB-8S-7Bb" secondAttribute="top" type="default" id="oj3-UU-U7T"/>
+                                            <constraint firstItem="FKc-7H-xNz" firstAttribute="top" secondItem="kl1-Ce-eWa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="paW-b8-rDG"/>
+                                            <constraint firstItem="FKc-7H-xNz" firstAttribute="centerX" secondItem="aqT-Ny-fv2" secondAttribute="centerX" type="default" id="rHX-E2-hmz"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cellLabel" destination="kl1-Ce-eWa" id="yV3-cU-UaK"/>
+                                            <outlet property="progressView" destination="FKc-7H-xNz" id="LRm-We-iNh"/>
+                                            <outlet property="thumbnailImageView" destination="aqT-Ny-fv2" id="dSs-WG-jCo"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="alwaysBounceVertical" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="BF8-SP-X3k"/>
+                                    <outlet property="delegate" destination="2" id="ad7-2I-lSa"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o1H-1E-ep0" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="B7F-QG-UWJ"/>
+                            <constraint firstItem="o1H-1E-ep0" firstAttribute="bottom" secondItem="Fg9-s7-SGk" secondAttribute="bottom" type="default" id="EDf-GQ-Pi8"/>
+                            <constraint firstItem="o1H-1E-ep0" firstAttribute="centerX" secondItem="Fg9-s7-SGk" secondAttribute="centerX" type="default" id="Q4g-oe-PuB"/>
+                            <constraint firstItem="o1H-1E-ep0" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Vdk-Xa-nYZ"/>
+                            <constraint firstItem="xXu-H6-qL2" firstAttribute="top" secondItem="o1H-1E-ep0" secondAttribute="bottom" type="default" id="YQZ-zc-TcB"/>
+                            <constraint firstItem="xXu-H6-qL2" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="c8m-JU-dB0"/>
+                            <constraint firstItem="o1H-1E-ep0" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="hOQ-Zp-JKW"/>
+                            <constraint firstItem="xXu-H6-qL2" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="hin-XK-RDS"/>
+                            <constraint firstItem="xXu-H6-qL2" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="oO6-96-90i"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kX3-wm-VCN"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="jly-vP-fRb" id="C4U-7F-PtV"/>
+                        <outlet property="collectionView" destination="xXu-H6-qL2" id="Qme-E2-bzl"/>
+                        <outlet property="mainProgressView" destination="DKr-vL-cAu" id="yj0-Gz-bcX"/>
+                        <outlet property="navBarLabel" destination="Fg9-s7-SGk" id="2jz-nv-1fg"/>
+                        <outlet property="toolBar" destination="o1H-1E-ep0" id="9eG-13-q8L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-137" y="49"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="IssueCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="progressView" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="thumbnailImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="deleteAllIssues"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="mainProgressView" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="navBarLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
